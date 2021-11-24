@@ -8,10 +8,13 @@ let Profile = (props) => {
         <img src={props.data.avatar_url} />
       </div>
       <div className='profile-center'>
-
+        <h1>{props.data.name}</h1>
+        <h3>{props.data.login}</h3>
+        <p>{props.data.bio}</p>
       </div>
       <div className='profile-right'>
-
+        <a href={props.data.html_url} target='_blank'>See Profile</a>
+        <a href={props.data.blog} target='_blank'>See Blog</a>
       </div>
     </div>
   )

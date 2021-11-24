@@ -41,9 +41,12 @@ class App extends React.Component {
           <h1>Github Repo Fetcher</h1>
         </div>
         <Search onSearch={this.search.bind(this)} />
-        <Profile data={this.state.userData} />
+        {this.state.userData.name ? <Profile data={this.state.userData} /> : null}
+        <div className 'main-page-bottom'>
+        <Charts data={this.state.repos} />
         <RepoList repos={this.state.repos} />
       </div>
+      </div >
     );
   }
 }
