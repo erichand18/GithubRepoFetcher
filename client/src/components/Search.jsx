@@ -15,7 +15,7 @@ class Search extends React.Component {
     });
   }
 
-  //search function passed down from index.jsx. This search takes the
+  //search function passed down from App.jsx. This search takes the
   //username entered by the user and gets the list of repos for that user.
   search() {
     this.props.onSearch(this.state.term);

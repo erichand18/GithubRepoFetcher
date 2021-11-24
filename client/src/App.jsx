@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      userData: {},
       repos: []
     }
 
@@ -19,7 +20,16 @@ class App extends React.Component {
         this.setState({ repos: response.data })
       })
       .catch((err) => {
-        console.log('Failed to post data. Error: ', err);
+        console.log('Failed to post data for repos. Error: ', err);
+      });
+
+    axios.post('/user', { search: username })
+      .then((response) => {
+        console.log(response.data);
+        this.setState({ userData: response.data });
+      })
+      .catch((err) => {
+        console.log('Failed to post data for user. Error: ', err);
       });
   }
 
@@ -29,6 +39,7 @@ class App extends React.Component {
         <div className='title'>
           <h1>Github Repo Fetcher</h1>
         </div>
+        <Profile data={this.state.userData}>
         <Search onSearch={this.search.bind(this)} />
         <RepoList repos={this.state.repos} />
       </div>
