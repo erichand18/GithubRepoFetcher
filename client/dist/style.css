@@ -15,11 +15,29 @@ h1, h2, h3, h4, h5, h6, p, input {
   display: none;
 }
 
-.app {
+.main-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #FFFFFF;
+  width: 80vw;
+  max-height: 15vh;
+}
+
+.profile-left img{
+  height: auto;
+  width: auto;
+  max-height: 10vh;
+  max-width: 10vh;
+  border-radius: 50%;
+  
 }
 
 .title {

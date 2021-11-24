@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Search from './components/Search.jsx';
 import RepoList from './components/RepoList.jsx';
+import Profile from './components/Profile.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -35,12 +36,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div >
+      <div className='main-page'>
         <div className='title'>
           <h1>Github Repo Fetcher</h1>
         </div>
-        <Profile data={this.state.userData}>
         <Search onSearch={this.search.bind(this)} />
+        <Profile data={this.state.userData} />
         <RepoList repos={this.state.repos} />
       </div>
     );
